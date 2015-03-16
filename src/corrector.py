@@ -19,8 +19,10 @@ def read_dict(files):
     return data
 
 
-def read_frecuencies(file='../data/10000_formas.TXT', min = 0):
-    words = {}
+def read_frecuencies(file='../data/10000_formas.TXT', lemario_file='../data/lemario.txt', min = 0):
+    frecuencies = {}
+
+    lemario = words(open(lemario_file, "r").read())
     with open(file, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
         next(reader, None)
@@ -31,11 +33,11 @@ def read_frecuencies(file='../data/10000_formas.TXT', min = 0):
                 key = row[1].strip().decode('latin-1')
                 frec = int(row[3].replace(".", ""))
 
-                if frec > min:
-                    words[key] = frec
+                if frec > min and key in lemario:
+                    frecuencies[key] = frec
 
 
-    return words
+    return frecuencies
 
 def mix(f1, f2):
     for f in f2.keys():
@@ -96,13 +98,14 @@ def correct(word):
         acu += c['frec']
         c['frec_acu'] = acu
 
+    '''
     #return the 80%
     if( len(cand) > 10):
         max = acu * 0.5
         cand = [c for c in cand if c['frec_acu'] < max]
 
         cand = cand[:10]
-
+    '''
 
 
     return cand
