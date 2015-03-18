@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Corrector ortográfico en castellano</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="{{STATIC_URL}}css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{{STATIC_URL}}js/jquery.min.js"></script>
+		<script src="{{STATIC_URL}}js/jquery.scrolly.min.js"></script>
+		<script src="{{STATIC_URL}}js/jquery.dropotron.min.js"></script>
+		<script src="{{STATIC_URL}}js/jquery.scrollex.min.js"></script>
+		<script src="{{STATIC_URL}}js/skel.min.js"></script>
+		<script src="{{STATIC_URL}}js/skel-layers.min.js"></script>
+		<script src="{{STATIC_URL}}js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="{{STATIC_URL }}css/skel.css" />
+			<link rel="stylesheet" href="{{STATIC_URL }}css/style.css" />
+			<link rel="stylesheet" href="{{STATIC_URL }}css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{STATIC_URL }}css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{STATIC_URL }}css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Corrector de castellano</a></h1>
+				
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="content">
+					<header>
+						<h2>Corrector ortográfico básico</h2>
+						<p>Basado en el tutorial <a href="http://norvig.com/spell-correct.html">How to Write a Spelling Corrector</a><br />
+						y adaptado para el castellano</p>
+					</header>
+					<span class="image"><img src="{{STATIC_URL}}images/pic01.jpg" alt="" /></span>
+				</div>
+				<a href="#one" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="spotlight style1 bottom">
+				<span class="image fit main"><img src="{{STATIC_URL}}images/pic02.jpg" alt="" /></span>
+				<div class="content">
+					<div class="container">
+						<div class="row">
+							<div class="3u 12u$(medium)">
+								<header>
+									<h2>Datos</h2>
+									<p>Se han usado dos fuentes principales obteniendo un diccionario con 578000 palabras</p>
+								</header>
+							</div>
+							<div class="3u 12u$(medium)">
+								<p>De la web de la RAE se han tomado un <a href="http://corpus.rae.es/lfrecuencias.html">cospus</a> con frecuencias de uso de de las palabras. Este no está completo, es decir, no está todas las palabras posibles del castellano, por lo que es necesario complementar con otras fuentes.</p>
+							</div>
+							<div class="3u 12u$(medium)">
+								<p>Se ha implementado un pequeño crawler usando la librería python <a href="http://newspaper.readthedocs.org/">newspaper</a> para extraer noticias de un portal en concreto. Se han coleccionado 12MB de noticias.</p>
+							</div>
+							<div class="3u$ 12u$(medium)">
+								<p>Además se ha implementado otro crawler para extraer de la RAE las conjugaciones de los verbos</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#two" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="spotlight style2 right">
+				<span class="image fit main"><img src="{{STATIC_URL}}images/pic03.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>Adaptaciones en el código</h2>
+					</header>
+					<p>Agregar al alfabeto los caracteres á,é,í,ó,ú,ñ y ü</p>
+					<p>Conversiones a utf-8</p>
+                                        <p>Uso de varios archivos diferentes para el corpus (noticias y conjugacioes) y usar las frecuencias de la RAE</p> 
+					<p>Devolución de una lista de sugerencias</p>
+					
+				</div>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="spotlight style3 left">
+				<span class="image fit main bottom"><img src="{{STATIC_URL}}images/pic04.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>Mejoreas</h2>
+						<p></p>
+						<p>Errores comunes de teclado</p>
+  						<p>Las correcciones de tilde deberían ser consideradas más probables</p>
+ 						<p>Las conjugaciones de un verbo igualmente podrían ser consideradas</p>
+				</div>
+				<a href="#four" class="goto-next scrolly">Next</a>
+			</section>
+
+		
+		<!-- Four -->
+			<section id="two" class="spotlight style2 right">
+				<span class="image fit main"><img src="{{STATIC_URL}}images/pic05.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>Pruebas</h2>
+					</header>
+					<p>Para hacer las pruebas se han tomado 27000 correcciones de un corrector ortográfico online.</p>
+					<p>Este corrector ha encontrado correcciones comunes en 9000 casos.</p>
+                                        <p>Durante las pruebas se han encontrado 57000 palabras descocidas para este corrector</p>
+					
+				</div>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+		<!-- Five -->
+			<section id="five" class="wrapper style2 special fade">
+				<div class="container">
+					<header>
+						<h2>Pruebalo</h2>
+						<p>Introduzca la palabra que desea corregir</p>
+					</header>
+					<form method="post" action="#" class="container 50%">
+						<div class="row uniform 50%">
+							<div class="12u 12u$(xsmall)"><input type="email" name="word" id="word" placeholder="Palabra a corregir" onKeyUp="javascript:correct()" /></div>
+							<div class="12u 12u$(xsmall)"><ul style="text-align:left" id="sug"></ul></div>
+
+						
+						</div>
+					</form>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				
+			</footer>
+
+	</body>
+
+	<script type="text/javascript">
+		function correct() {
+
+			$.getJSON( 'correct/'+$('#word').val(), function( data ) {
+				var items = [];
+				$.each( data, function( key, val ) {
+					items.push( "<li id='" + key + "'>" + val['sug'] + "</li>" );
+				});
+
+				$("#sug").html(items.join( "" ));
+			});
+		}
+	</script>
+</html>
