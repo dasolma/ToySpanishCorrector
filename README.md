@@ -1,2 +1,3 @@
 # ToySpanishCorrector
-Example the an spanish spelling corrector
+
+You can check it in: url[http://mowento.cs.us.es/corrector/]
