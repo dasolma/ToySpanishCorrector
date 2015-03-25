@@ -1,3 +1,3 @@
 # ToySpanishCorrector
 
-You can check it in: url[http://mowento.cs.us.es/corrector/]
+You can check it in: http://mowento.cs.us.es/corrector/
